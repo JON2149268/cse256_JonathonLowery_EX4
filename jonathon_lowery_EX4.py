@@ -12,9 +12,11 @@ words = ['attorney', 'good', 'evil', 'science', 'fiction', 'reading', 'rainbow',
 word = random.choice(words)
 print(f"Guess the word, one letter at a time.")
 
+# set the limit of user guesses
 guesses = ' '
 turns = 15
 
+# define game parameters to reveal letter guessed
 while turns > 0:
     failed = 0
     for char in word:
@@ -31,12 +33,16 @@ while turns > 0:
         break
 
     print()
+# Create count keeping for number of guesses    
     guess = input(f"Guess a character:")
     guesses += guess
+    # return statement for incorrect guesses and when user runs out of guesses
     if guess not in word:
         turns -= 1
         print(f"Incorrect guess")
         print(f"You have", + turns, "more guesses.")
         if turns == 0:
             print(f"Sorry, you lost the game. Better luck next time.")
+
+            
             
